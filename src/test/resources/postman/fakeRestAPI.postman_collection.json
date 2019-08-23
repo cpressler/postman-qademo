@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "c6f25373-6210-41b4-aced-e7b976a99d10",
+		"name": "fakeRestAPI",
+		"description": "From this website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "getAllActivities",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "1d0f7853-dc4b-4188-ae02-35aa0f53a365",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/Activities",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Activities"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getActivitiesById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4e4aad4c-4e0e-438c-b9f7-942d0f24552a",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/Activities/{{activityId}}",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Activities",
+						"{{activityId}}"
+					],
+					"query": [
+						{
+							"key": "employeeID",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createActivityById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6af07663-4c42-4471-aeab-0de5e9637163",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ID\": 13,\n  \"Title\": \"a fake activity\",\n  \"DueDate\": \"2019-08-23T16:45:04.906Z\",\n  \"Completed\": false\n}"
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/Activities/{{activityId}}",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Activities",
+						"{{activityId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateActivityById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a0ca1ea7-c942-4613-844f-ec0087162dcf",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"ID\": 13,\n  \"Title\": \"a fake activity has been canceled\",\n  \"DueDate\": \"2019-08-23T16:45:04.906Z\",\n  \"Completed\": false\n}"
+				},
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/Activities/{{activityId}}",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Activities",
+						"{{activityId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteActivitiesById",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "6cebe198-563c-4b38-a73d-74c43fb35998",
+						"exec": [
+							"// example using pm.response.to.have",
+							"pm.test(\"response is ok\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "*/*"
+					}
+				],
+				"url": {
+					"raw": "http://fakerestapi.azurewebsites.net/api/Activities/{{activityId}}",
+					"protocol": "http",
+					"host": [
+						"fakerestapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"Activities",
+						"{{activityId}}"
+					],
+					"query": [
+						{
+							"key": "employeeID",
+							"value": "1",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "c18d34c0-3629-446d-8ef4-2a6707e7587a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "8d180dfb-4891-43fa-9969-fb2e33da7f86",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "22e4e417-34ba-476a-9d37-87190be12bec",
+			"key": "activityId",
+			"value": "1",
+			"type": "string"
+		}
+	]
+}
